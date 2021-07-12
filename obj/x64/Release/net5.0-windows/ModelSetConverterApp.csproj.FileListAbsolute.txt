@@ -18,3 +18,10 @@ D:\PilotGaea_Sample\Map Server Plugin\ModelSetConverterApp\obj\x64\Release\net5.
 D:\PilotGaea_Sample\Map Server Plugin\ModelSetConverterApp\obj\x64\Release\net5.0-windows\ref\ModelSetConverterApp.dll
 D:\PilotGaea_Sample\Map Server Plugin\ModelSetConverterApp\obj\x64\Release\net5.0-windows\ModelSetConverterApp.pdb
 D:\PilotGaea_Sample\Map Server Plugin\ModelSetConverterApp\obj\x64\Release\net5.0-windows\ModelSetConverterApp.genruntimeconfig.cache
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.exe
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.deps.json
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.runtimeconfig.json
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.runtimeconfig.dev.json
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.dll
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ref\ModelSetConverterApp.dll
+C:\Program Files\PilotGaea\TileMap\net5.0-windows\ModelSetConverterApp.pdb
