@@ -1,6 +1,4 @@
 ﻿
-using System;
-
 namespace ModelSetConverterApp
 {
     partial class Form1
@@ -13,7 +11,7 @@ namespace ModelSetConverterApp
         /// <summary>
         /// 清除任何使用中的資源。
         /// </summary>
-        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        /// <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -24,7 +22,6 @@ namespace ModelSetConverterApp
         }
 
         #region Windows Form 設計工具產生的程式碼
-
         /// <summary>
         /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
         /// 這個方法的內容。
@@ -98,10 +95,10 @@ namespace ModelSetConverterApp
             this.Text = "modelset maker";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
-
         private System.Windows.Forms.ListBox listBox_Main;
         private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.ProgressBar progressBar_Main;
@@ -109,4 +106,3 @@ namespace ModelSetConverterApp
         private System.Windows.Forms.ComboBox comboBox_Features;
     }
 }
-

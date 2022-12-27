@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9DD1348D-F7B6-42E4-88E2-D113AA5A8AF5}</ProjectGuid>
+    <ProjectGuid>{B75C227E-FF4D-422D-9AED-EB26ADF95396}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ModelSetConverterApp</RootNamespace>
     <AssemblyName>ModelSetConverterApp</AssemblyName>
@@ -65,7 +65,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TMPEngine">
-      <HintPath>C:\Program Files\PilotGaea\TileMap\TMPEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\source\repos\modelset_maker\modelset_maker\bin\Debug\TMPEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

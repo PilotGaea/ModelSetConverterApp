@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
 using PilotGaea.Serialize;
 using PilotGaea.TMPEngine;
 using PilotGaea.Geometry;
-using System.Diagnostics;
 
 namespace ModelSetConverterApp
 {
@@ -18,20 +14,23 @@ namespace ModelSetConverterApp
     {
         CModelSetMaker m_Maker = null;
         Stopwatch m_Stopwatch = new Stopwatch();
+
         public Form1()
         {
             InitializeComponent();
+
             //加入功能列表
             List<string> featureNames = new List<string>();
             featureNames.Add("來源KMZ");
             featureNames.Add("來源SHP");
             featureNames.Add("來源MESH");
-            featureNames.Add("輸出I3S");
-            featureNames.Add("輸出3DTiles");
+            featureNames.Add("輸出OGC I3S");
+            featureNames.Add("輸出OGC 3DTiles");
             comboBox_Features.Items.AddRange(featureNames.ToArray());
             comboBox_Features.SelectedIndex = 0;
         }
-        private void button_Start_Click(object sender, EventArgs e) 
+
+        private void button_Start_Click(object sender, EventArgs e)
         {
             EnableUI(false);
 
@@ -77,14 +76,14 @@ namespace ModelSetConverterApp
                     sourceData.PosX = 179259.33;
                     sourceData.PosY = 2502475.66;
                     break;
-                case 3://"輸出I3S"
+                case 3://"輸出OGC I3S"
                     createParam.ExportType = EXPORT_TYPE.LET_OGCI3S;
-                    createParam.LayerName = "modelset_maker_i3s";
+                    createParam.LayerName = "modelset_maker_ogci3s";
                     //會在destPath目錄下產生layerName.slpk
                     break;
-                case 4://"輸出3DTiles
+                case 4://"輸出OGC 3DTiles
                     createParam.ExportType = EXPORT_TYPE.LET_OGC3DTILES;
-                    createParam.LayerName = "modelset_maker_3dtiles";
+                    createParam.LayerName = "modelset_maker_ogc3dtiles";
                     //會在destPath目錄下產生layerName資料夾
                     break;
             }
@@ -101,14 +100,17 @@ namespace ModelSetConverterApp
             message = string.Format("EndCreate{0}", (ret ? "通過" : "失敗"));
             listBox_Main.Items.Add(message);
         }
+
         private void M_Maker_ProgressPercentChanged(double Percent)
         {
             progressBar_Main.Value = Convert.ToInt32(Percent);
         }
+
         private void M_Maker_ProgressMessageChanged(string Message)
         {
             listBox_Main.Items.Add(Message);
         }
+
         private void M_Maker_CreateLayerCompleted(string LayerName, bool Success, string ErrorMessage)
         {
             m_Stopwatch.Stop();
@@ -117,6 +119,7 @@ namespace ModelSetConverterApp
             message = string.Format("耗時{0}分。", m_Stopwatch.Elapsed.TotalMinutes.ToString("0.00"));
             listBox_Main.Items.Add(message);
         }
+
         private void EnableUI(bool enable)
         {
             button_Start.Enabled = enable;
